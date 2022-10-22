@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container-home {
+    width: 100%;
+    position: relative;
+}
+.imgHome {
+    width: 100%;
+    object-fit: cover;
+}

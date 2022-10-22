@@ -1,0 +1,27 @@
+{
+  "name": "netflix-clone-attempt",
+  "version": "1.0.0",
+  "description": "En este proyecto vamos a crear un clon de la app de Netflix usando API REST y axios.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasegpla/netflix-clone-attempt.git"
+  },
+  "keywords": [
+    "API-REST",
+    "axios",
+    "JavaScript"
+  ],
+  "author": "Nicolas Garcia <nicolasgpla@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicolasegpla/netflix-clone-attempt/issues"
+  },
+  "homepage": "https://github.com/nicolasegpla/netflix-clone-attempt#readme",
+  "dependencies": {
+    "node": "^19.0.0"
+  }
+}
