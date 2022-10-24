@@ -1,14 +1,55 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-.container-home {
-    width: 100%;
+html {
+    font-size: 62.5%;
+}
+.container {
+    width: 380px;
+    margin: 0 auto;
+}
+.container-post-home {
     position: relative;
 }
-.imgHome {
+.container-img-post {
     width: 100%;
-    object-fit: cover;
+    max-width: 380px;
+    margin: 0 auto;
+}
+.img-post {
+    width: 100%; 
+}
+.container-top {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+.container-top__title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+
+}
+.container-top__movie {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 150px;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-bottom: 16px;
+}
+.top-movie-container {
+    max-width: 380px;
+    margin: 0 auto;
+    display: inline-block;
+    margin-right: 8px;
+}
+.img-top-movie__scroll {
+    height: 150px;
+    border-radius: 10px;
 }
