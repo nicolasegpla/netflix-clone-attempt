@@ -6,17 +6,54 @@
 html {
     font-size: 62.5%;
 }
+body {
+    background-color: #000;
+}
 .container {
     width: 380px;
     margin: 0 auto;
+    background-color: #000;
 }
-.container-post-home {
-    position: relative;
+.nav-home {
+    width: 380px;
+    height: 100px;
+    position: fixed;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    --opacidad-negro: 0.6;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url("../img/fondo.jpg");
+    
 }
+.logo-netflix {
+    width: 100px;
+    opacity: 100%;
+}
+.nav-search {
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.button-perfil {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+}
+.img-perfil {
+    width: 100%;
+    border-radius: 10px;
+}
+
 .container-img-post {
     width: 100%;
     max-width: 380px;
     margin: 0 auto;
+    position: relative;
 }
 .img-post {
     width: 100%; 
@@ -32,13 +69,14 @@ html {
     display: inline-block;
     margin-top: 5px;
     margin-left: 10px;
+    color: #fff;
 
 }
 .container-top__movie {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 150px;
+    height: 300px;
     margin-top: 10px;
     padding-left: 8px;
     padding-bottom: 16px;
@@ -50,6 +88,31 @@ html {
     margin-right: 8px;
 }
 .img-top-movie__scroll {
-    height: 150px;
+    height: 300px;
     border-radius: 10px;
+}
+.container-trending-movie__movie {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 300px;
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-bottom: 16px;
+}
+.container-trending-tv__tv {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 8px;
+    padding-bottom: 16px;
+}
+
+
+
+.inactive {
+    display: none;
 }
