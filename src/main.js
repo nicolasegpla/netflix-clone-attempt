@@ -16,6 +16,14 @@ async function getDataHomeMovies() {
     
     const containerImgPost = document.querySelector('.container-img-post');
     containerImgPost.innerHTML = '';
+    containerImgPost.addEventListener('click', () => {
+        console.log('hola');
+    })
+
+    function createTaregetInfo() {
+        const containerTarget = document.createElement('section');
+    }
+    
 
     function createPostMovie() {
         const containerPostHomeImg = document.createElement('div');
@@ -99,5 +107,128 @@ async function getDataHomeTrendsTv() {
     }
     createElement();
 }
+
+async function getCategories() {
+    const {data} = await api('genre/movie/list');
+    const categories = data.genres;
+
+    
+    const categorias = document.querySelector('.categorias');
+    categorias.innerHTML = '';
+
+    function createElement() {
+
+     categories.forEach(element => {
+        const categoryP = document.createElement('p');
+        categoryP.classList.add('categoriasP');
+        categoryP.innerHTML = element.name;
+        categoryP.addEventListener('click', () => {
+            location.hash = ('#categories=' + element.id + '-' + element.name);
+            console.log('pollito');
+        });
+
+        categorias.appendChild(categoryP);
+        
+        
+     });
+
+     const close = document.createElement('button');
+     const closeImg = document.createElement('img');
+     close.classList.add('button-Close');
+     closeImg.setAttribute('src', 'assets/icons/close.svg');
+     close.appendChild(closeImg);
+     categorias.appendChild(close);
+
+     close.addEventListener('click', cerrarCategorias);
+
+     function cerrarCategorias(){
+        navHome.classList.remove('inactive');
+        categorias.classList.add('inactive'); 
+    }
+
+
+    }
+    createElement();
+}
+
+async function getGeners(id) {
+    const {data} = await api('discover/movie', {
+        params: {
+            with_genres: id,
+        },
+        
+    });
+    const arrayData = data.results;
+    categoryInfo.innerHTML = '';
+    
+
+    function createElement(){
+        arrayData.forEach(movie => {
+            const containerTopMovie = document.createElement('div');
+            containerTopMovie.classList.add('top-movie-container-grid');
+            const imgTopMovie = document.createElement('img');
+            imgTopMovie.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
+            imgTopMovie.setAttribute('alt',  movie.title);
+            imgTopMovie.classList.add('img-category-grid');
+            containerTopMovie.appendChild(imgTopMovie);
+            categoryInfo.appendChild(containerTopMovie);
+
+        });
+    }
+    createElement();
+}
+
+async function getMoviePage() {
+    const {data} = await api('trending/movie/day', {
+        params: {
+            page: 1,
+        },
+    });
+    const arrayData = data.results;
+    moviePage.innerHTML ='';
+
+    function createElement(){
+        arrayData.forEach(movie => {
+            const containerTopMovie = document.createElement('div');
+            containerTopMovie.classList.add('top-movie-container-grid');
+            const imgTopMovie = document.createElement('img');
+            imgTopMovie.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
+            imgTopMovie.setAttribute('alt',  movie.title);
+            imgTopMovie.classList.add('img-category-grid');
+            containerTopMovie.appendChild(imgTopMovie);
+            moviePage.appendChild(containerTopMovie);
+
+        });
+    }
+    createElement();
+
+}
+
+async function getTvPage() {
+    const {data} = await api('trending/tv/day', {
+        params: {
+            page: 1,
+        },
+    });
+    const arrayData = data.results;
+    moviePage.innerHTML ='';
+
+    function createElement(){
+        arrayData.forEach(movie => {
+            const containerTopMovie = document.createElement('div');
+            containerTopMovie.classList.add('top-movie-container-grid');
+            const imgTopMovie = document.createElement('img');
+            imgTopMovie.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
+            imgTopMovie.setAttribute('alt',  movie.title);
+            imgTopMovie.classList.add('img-category-grid');
+            containerTopMovie.appendChild(imgTopMovie);
+            tvContainer.appendChild(containerTopMovie);
+
+        });
+    }
+    createElement();
+
+}
+
 
 

@@ -11,24 +11,39 @@ body {
 }
 .container {
     width: 380px;
+    max-width: 380px;
+    min-width: 380px;
     margin: 0 auto;
     background-color: #000;
 }
+.nav-init {
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .nav-home {
     width: 380px;
-    height: 100px;
+    max-width: 380px;
+    min-width: 380px;
+    height: 130px;
     position: fixed;
     z-index: 1;
     border-radius: 0 0 10px 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     --opacidad-negro: 0.6;
-    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url("../img/fondo.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro)));
     
 }
 .logo-netflix {
     width: 100px;
+    height: 70px;
     opacity: 100%;
 }
 .nav-search {
@@ -47,6 +62,50 @@ body {
 .img-perfil {
     width: 100%;
     border-radius: 10px;
+}
+
+.container-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.container-menu__peliculas,
+.container-menu__tv,
+.container-menu__categorias {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+.categorias {
+    width: 380px;
+    height: 950px;
+    margin: 0 auto;
+    background-color: #333;
+    position: absolute;
+    z-index: 3;
+    opacity: 90%;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.categoriasP {
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+}
+.button-Close {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
 }
 
 .container-img-post {
@@ -112,6 +171,57 @@ body {
 }
 
 
+
+.container-pri-categorias__title {
+    color: #fff;
+}
+
+
+.container-pri-categorias,
+.movie-menu,
+.tv-menu {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    max-width: 380px;
+    min-width: 380px;
+    margin: 0 auto;
+    
+}
+
+.categoryInfo,
+.movie-page,
+.tv-page{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 380px;
+    height: 2850px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    
+}
+
+.img-category-grid {
+    width: 200px;
+    padding: 10px;
+}
+.container-pri-categorias__title {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.arrow-category,
+.arrow-movie,
+.arrow-tv {
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
 
 .inactive {
     display: none;

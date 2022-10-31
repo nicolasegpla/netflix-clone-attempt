@@ -13,16 +13,31 @@
 </head>
 <body>
     <section class="container">
+        <div class="categorias inactive">
+                
+            <button><img src="assets/icons/close.svg" alt=""></button>
+        </div>
+        
         <article class="nav-home">
-            <img id="logo-netflix" class="logo-netflix" src="assets/img/icononetflixnuevo.png" alt="logo-netflix">
-            <div class="nav-search">
-                <img id="search" src="assets/icons/search.svg" alt="search">
-                <button class="button-perfil"><img class="img-perfil" src="assets/img/jake.png" alt=""></button>
+            <div class="nav-init">
+                <img id="logo-netflix" class="logo-netflix" src="assets/img/icononetflixnuevo.png" alt="logo-netflix">
+                <div class="nav-search">
+                    <img id="search" src="assets/icons/search.svg" alt="search">
+                    <button class="button-perfil"><img class="img-perfil" src="assets/img/jake.png" alt=""></button>
+                </div>
             </div>
-
+            <div class="container-menu">
+                <p class="container-menu__peliculas">Movies</p>
+                <p class="container-menu__tv">Tv</p>
+                <p class="container-menu__categorias">Categories</p>
+            </div>
         </article>
+
+        
+
         <article class="container-post-home">
             <h1 class="inactive">Trends</h1>
+            
             <section class="container-img-post">
             </section>
         </article>
@@ -41,9 +56,30 @@
             <section class="container-trending-tv__tv">
             </section>
         </article>
-
-
     </section>
+    
+        <section class="container-pri-categorias inactive">
+            <img class="arrow-category" src="assets/icons/arrow.svg" alt="">
+            <h1 class="container-pri-categorias__title">action</h1>
+            <div class="categoryInfo">
+            </div>
+        </section>
+        <section class="movie-menu inactive">
+            <img class="arrow-movie" src="assets/icons/arrow.svg" alt="">
+            <h1 class="container-pri-categorias__title">Movies</h1>
+            <div class="movie-page"></div>
+
+        </section>
+
+        <section class="tv-menu inactive">
+            <img class="arrow-tv" src="assets/icons/arrow.svg" alt="">
+            <h1 class="container-pri-categorias__title">Movies</h1>
+            <div class="tv-page"></div>
+
+        </section>
+
+  
+    
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="src/node.js"></script>
