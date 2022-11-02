@@ -230,5 +230,54 @@ async function getTvPage() {
 
 }
 
+async function getDataHomeTopMoviesSearch() {
+    const {data} = await api('movie/top_rated');
+    const arrayData = data.results;
+    
 
+    
+    searchRoot.innerHTML = '';
 
+    function createElement(){
+        arrayData.forEach(movie => {
+            const containerTopMovie = document.createElement('div');
+            containerTopMovie.classList.add('top-movie-container-grid');
+            const imgTopMovie = document.createElement('img');
+            imgTopMovie.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
+            imgTopMovie.setAttribute('alt',  movie.title);
+            imgTopMovie.classList.add('img-category-grid');
+            containerTopMovie.appendChild(imgTopMovie);
+            searchRoot.appendChild(containerTopMovie);
+
+        });
+    }
+    createElement();
+}
+
+async function getSearchMovie(query) {
+    const {data} = await api('search/movie', {
+        params: {
+            query,
+        },
+        
+    });
+    const arrayData = data.results;
+    searchRoot.innerHTML = '';
+    console.log(arrayData);
+    
+
+    function createElement(){
+        arrayData.forEach(movie => {
+            const containerTopMovie = document.createElement('div');
+            containerTopMovie.classList.add('top-movie-container-grid');
+            const imgTopMovie = document.createElement('img');
+            imgTopMovie.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path)
+            imgTopMovie.setAttribute('alt',  movie.title);
+            imgTopMovie.classList.add('img-category-grid');
+            containerTopMovie.appendChild(imgTopMovie);
+            searchRoot.appendChild(containerTopMovie);
+
+        });
+    }
+    createElement();
+}

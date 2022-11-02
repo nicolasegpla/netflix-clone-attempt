@@ -17,12 +17,22 @@ const arrowMOvie = document.querySelector('.arrow-movie');
 const arrowTv = document.querySelector('.arrow-tv');
 const tvContainer = document.querySelector('.tv-page');
 const tvMenuPage = document.querySelector('.tv-menu');
+const containerSearch = document.querySelector('.container-search');
+const searchRoot = document.querySelector('.container-search__root');
+const inputSearch = document.querySelector('.container-search__input');
+const arrowSearch = document.querySelector('.conatiner-search__arrow');
 
 
 menuCategoria.addEventListener('click', mostrarCategorias);
 arrowCategory.addEventListener('click', volverAlHome);
 arrowMOvie.addEventListener('click', volverAlHome);
 arrowTv.addEventListener('click', volverAlHome);
+arrowSearch.addEventListener('click', volverAlHome);
+inputSearch.addEventListener('keyup', ()=>{
+    console.log('pollito baquero');
+    location.hash = '#search=' + inputSearch.value;
+    getSearchMovie;
+})
 
 menuMovie.addEventListener('click', ()=> {
     location.hash = '#movie=';
@@ -33,7 +43,7 @@ menuTv.addEventListener('click', () => {
 
 
 search.addEventListener('click', () => {
-    location.hash = '#trends';
+    location.hash = '#search=';
 })
 logoHome.addEventListener('click', () => {
     location.hash = '#home';
@@ -50,6 +60,7 @@ function volverAlHome() {
     location.hash = '#home';
     menuMOvies.classList.add('inactive');
     tvMenuPage.classList.add('inactive');
+    containerSearch.classList.add('inactive');
 }
 
 

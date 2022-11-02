@@ -9,6 +9,7 @@ function navegacion() {
         postHome.classList.add('inactive');
     }else if(location.hash.startsWith('#search=')){
         console.log('estamos en search');
+        searchaPage();
     }else if(location.hash.startsWith('#movie=')){
         moviesPage();
     }else if(location.hash.startsWith('#tv')){
@@ -60,5 +61,17 @@ function tvPage(){
     containerHome.classList.add('inactive');
     tvMenuPage.classList.remove('inactive');
     getTvPage();
+    
+}
+function searchaPage() {
+    categorias.classList.add('inactive');
+    containerHome.classList.add('inactive');
+    containerSearch.classList.remove('inactive');
+    getDataHomeTopMoviesSearch();
+    
+    
+    const [_, query] = location.hash.split('=');
+
+    getSearchMovie(query);
     
 }
